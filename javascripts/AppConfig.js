@@ -11,15 +11,15 @@ app.config(function($routeProvider){
             controller: 'LoginCtrl'
         })
         .when("/contacts/new", {
-            templateUrl: 'partials/contacts/new',
+            templateUrl: 'partials/contacts/new.html',
             controller: 'NewCtrl'
         })
         .when("/contacts/view", {
-            templateUrl: 'partials/contacts/view',
+            templateUrl: 'partials/contacts/view.html',
             controller: 'ViewCtrl'
         })
         .when("/contacts/favorites", {
-            templateUrl: 'partials/contacts/favorites',
+            templateUrl: 'partials/contacts/favorites.html',
             controller: 'FavoriteCtrl'
         })
         .otherwise('/login');
