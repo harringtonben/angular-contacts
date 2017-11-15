@@ -1,0 +1,14 @@
+@import 'colors';
+
+#new-contacts {
+    background-color: $white;
+    padding: 10px;
+    -webkit-box-shadow: 0px 18px 41px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 18px 41px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 18px 41px 0px rgba(0,0,0,0.75);
+}
+
+.sociallogo {
+    height: 25px;
+    width: 25px;
+}
