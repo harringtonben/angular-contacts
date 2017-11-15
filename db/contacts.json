@@ -1,0 +1,95 @@
+{
+	"contacts": {
+		"contact0": {
+			"first_name": "Bro 0",
+			"last_name": "Jabroni",
+			"phone_number": "6154523564",
+			"email": "jabroni@gmail.com",
+			"twitter": "@brodog",
+			"facebook_page": "facebook.com/iambro",
+			"instagram_username": "instagram.com/iambro"
+		},
+		"contact1": {
+			"first_name": "Bro 1",
+			"last_name": "Jabroni",
+			"phone_number": "6154523564",
+			"email": "jabroni@gmail.com",
+			"twitter": "@brodog",
+			"facebook_page": "facebook.com/iambro",
+			"instagram_username": "instagram.com/iambro"
+		},
+		"contact2": {
+			"first_name": "Bro 2",
+			"last_name": "Jabroni",
+			"phone_number": "6154523564",
+			"email": "jabroni@gmail.com",
+			"twitter": "@brodog",
+			"facebook_page": "facebook.com/iambro",
+			"instagram_username": "instagram.com/iambro"
+		},
+		"contact3": {
+			"first_name": "Bro 3",
+			"last_name": "Jabroni",
+			"phone_number": "6154523564",
+			"email": "jabroni@gmail.com",
+			"twitter": "@brodog",
+			"facebook_page": "facebook.com/iambro",
+			"instagram_username": "instagram.com/iambro"
+		},
+		"contact4": {
+			"first_name": "Bro 4",
+			"last_name": "Jabroni",
+			"phone_number": "6154523564",
+			"email": "jabroni@gmail.com",
+			"twitter": "@brodog",
+			"facebook_page": "facebook.com/iambro",
+			"instagram_username": "instagram.com/iambro"
+		},
+		"contact5": {
+			"first_name": "Bro 5",
+			"last_name": "Jabroni",
+			"phone_number": "6154523564",
+			"email": "jabroni@gmail.com",
+			"twitter": "@brodog",
+			"facebook_page": "facebook.com/iambro",
+			"instagram_username": "instagram.com/iambro"
+		},
+		"contact6": {
+			"first_name": "Bro 6",
+			"last_name": "Jabroni",
+			"phone_number": "6154523564",
+			"email": "jabroni@gmail.com",
+			"twitter": "@brodog",
+			"facebook_page": "facebook.com/iambro",
+			"instagram_username": "instagram.com/iambro"
+		},
+		"contact7": {
+			"first_name": "Bro 7",
+			"last_name": "Jabroni",
+			"phone_number": "6154523564",
+			"email": "jabroni@gmail.com",
+			"twitter": "@brodog",
+			"facebook_page": "facebook.com/iambro",
+			"instagram_username": "instagram.com/iambro"
+		},
+		"contact8": {
+			"first_name": "Bro 8",
+			"last_name": "Jabroni",
+			"phone_number": "6154523564",
+			"email": "jabroni@gmail.com",
+			"twitter": "@brodog",
+			"facebook_page": "facebook.com/iambro",
+			"instagram_username": "instagram.com/iambro"
+		},
+		"contact9": {
+			"first_name": "Bro 9",
+			"last_name": "Jabroni",
+			"phone_number": "6154523564",
+			"email": "jabroni@gmail.com",
+			"twitter": "@brodog",
+			"facebook_page": "facebook.com/iambro",
+			"instagram_username": "instagram.com/iambro"
+		}
+
+	}
+}
