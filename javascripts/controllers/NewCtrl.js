@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller("NewCtrl", function($http, $scope, DatabaseService) {
+app.controller("NewCtrl", function($http, $rootScope, $scope, DatabaseService) {
    $scope.newcontact = {};
    
    $scope.submitForm = () => {
@@ -11,7 +11,8 @@ app.controller("NewCtrl", function($http, $scope, DatabaseService) {
 			"email": $scope.newcontact.email,
 			"twitter": $scope.newcontact.twitter,
 			"facebook_page": $scope.newcontact.facebook,
-			"instagram_username": $scope.newcontact.instagram
+            "instagram_username": $scope.newcontact.instagram,
+            "user_id": $rootScope.uid
         };
 
         DatabaseService.addNewContact(newContact);
