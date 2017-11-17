@@ -12,4 +12,12 @@ app.controller("ViewCtrl", function($rootScope, $scope, DatabaseService) {
     };
 
     getContacts();
+
+    $scope.deleteContact = (contactId) => {
+        DatabaseService.deleteContact(contactId).then((result) => {
+            getContacts();
+        }).catch((error) => {
+            console.log("error in deleteContact", error);
+        });
+    };
 });

@@ -24,5 +24,9 @@ app.service("DatabaseService", function($http, $q, FIREBASE_CONFIG) {
         return $http.post(`${FIREBASE_CONFIG.databaseURL}/contacts.json`, JSON.stringify(newContact));
     };
 
-    return {addNewContact, getContacts};
+    const deleteContact = (contactId) => {
+        return $http.delete(`${FIREBASE_CONFIG.databaseURL}/contacts/${contactId}.json`);
+    };
+
+    return {addNewContact, getContacts, deleteContact};
 });
