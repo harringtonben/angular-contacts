@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller("NewCtrl", function($http, $rootScope, $scope, DatabaseService) {
+app.controller("NewCtrl", function($http, $location, $rootScope, $scope, DatabaseService) {
    $scope.newcontact = {};
    
    $scope.submitForm = () => {
@@ -16,6 +16,6 @@ app.controller("NewCtrl", function($http, $rootScope, $scope, DatabaseService) {
         };
 
         DatabaseService.addNewContact(newContact);
-       
+        $location.path('/contacts/view');
    };
 });
