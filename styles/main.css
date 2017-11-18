@@ -13,5 +13,17 @@
   height: 25px;
   width: 25px; }
 
+.contact h3 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
+.contact .thumbnail {
+  position: relative; }
+  .contact .thumbnail .delete {
+    position: absolute;
+    top: 5px;
+    right: 5px; }
+
 body {
   background-color: #C3C3C3; }

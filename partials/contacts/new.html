@@ -1,46 +1,46 @@
-<div class="text-center" id="new-contacts">
+<div class="text-center" id="new-contacts" ng-controller="NewCtrl">
     <div>
-        <form class="form-horizontal">
+        <form class="form-horizontal" name="newcontact" ng-submit="submitForm()">
             <div class="form-group">
                 <label for="first_name" class="col-sm-2 control-label">First Name</label>
                 <div class="col-sm-10">
-                <input type="text" class="form-control" id="first_name" placeholder="First Name">
+                <input type="text" class="form-control" id="first_name" placeholder="First Name" ng-model="newcontact.firstname" required>
                 </div>
             </div>
             <div class="form-group">
                 <label for="last_name" class="col-sm-2 control-label">Last Name</label>
                 <div class="col-sm-10">
-                <input type="text" class="form-control" id="last_name" placeholder="Last Name">
+                <input type="text" class="form-control" id="last_name" placeholder="Last Name" ng-model="newcontact.lastname" required>
                 </div>
             </div>
             <div class="form-group">
                 <label for="phone_number" class="col-sm-2 control-label">Phone Number</label>
                 <div class="col-sm-10">
-                <input type="text" class="form-control" id="phone_number" placeholder="Phone Number">
+                <input type="tel" class="form-control" id="phone_number" placeholder="Phone Number" ng-model="newcontact.phonenumber" required>
                 </div>
             </div>
             <div class="form-group">
                 <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
                 <div class="col-sm-10">
-                <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                <input type="email" class="form-control" id="inputEmail" placeholder="Email" ng-model="newcontact.email" required>
                 </div>
             </div>
             <div class="form-group">
                 <label for="twitter" class="col-sm-2 control-label"><img class="sociallogo" src="images/twitter.jpg" alt="twitter"></label>
                 <div class="col-sm-10">
-                <input type="password" class="form-control" id="twitter" placeholder="twitter">
+                <input type="url" class="form-control" id="twitter" placeholder="twitter" ng-model="newcontact.twitter" required> 
                 </div>
             </div>
             <div class="form-group">
                 <label for="facebook" class="col-sm-2 control-label"><img class="sociallogo" src="images/facebook.png" alt="facebook"></label>
                 <div class="col-sm-10">
-                <input type="password" class="form-control" id="facebook" placeholder="facebook">
-                </div>
+                <input type="url" class="form-control" id="facebook" placeholder="facebook" ng-model="newcontact.facebook" required>
+            </div>
             </div>
             <div class="form-group">
                 <label for="instagram" class="col-sm-2 control-label"><img class="sociallogo" src="images/instagram.png" alt="instagram"></label>
                 <div class="col-sm-10">
-                <input type="password" class="form-control" id="instagram" placeholder="instagram">
+                <input type="url" class="form-control" id="instagram" placeholder="instagram" ng-model="newcontact.instagram" required>
                 </div>
             </div>
             <div class="form-group">
