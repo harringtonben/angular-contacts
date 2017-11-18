@@ -34,6 +34,26 @@ app.service("DatabaseService", function($http, $rootScope, $q, FIREBASE_CONFIG) 
         });
     };
 
+    const getFavoriteContacts = (userUid) => {
+        let myContacts = [];
+        return $q((resolve, reject) => {
+            $http.get(`${FIREBASE_CONFIG.databaseURL}/contacts.json?orderBy="user_id"&equalTo="${userUid}"`).then((results) => {
+                let contacts = results.data;
+                if (contacts != null) {
+                    Object.keys(contacts).forEach((key) => {
+                        contacts[key].id = key;
+                        if (contacts[key].is_favorite) {
+                            myContacts.push(contacts[key]);
+                        }
+                    });    
+                }
+                resolve(myContacts); 
+            }).catch((error) => {
+                reject(error);
+            });
+        });
+    };
+
     const addNewContact = (newContact) => {
         return $http.post(`${FIREBASE_CONFIG.databaseURL}/contacts.json`, JSON.stringify(newContact));
     };
@@ -46,5 +66,5 @@ app.service("DatabaseService", function($http, $rootScope, $q, FIREBASE_CONFIG) 
         return $http.put(`${FIREBASE_CONFIG.databaseURL}/contacts/${contactId}.json`, JSON.stringify(contact));
     };
 
-    return {addNewContact, getContacts, deleteContact, createContactObject, updateContact};
+    return {addNewContact, getContacts, deleteContact, createContactObject, updateContact, getFavoriteContacts};
 });

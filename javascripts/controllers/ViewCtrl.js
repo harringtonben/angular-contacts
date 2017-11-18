@@ -23,7 +23,7 @@ app.controller("ViewCtrl", function($location, $rootScope, $scope, DatabaseServi
 
     $scope.favoriteContact = (contact) => {
         let updatedContact = {};
-        
+
         if (!contact.is_favorite) {
             updatedContact = DatabaseService.createContactObject(contact);
         }else {
@@ -36,5 +36,9 @@ app.controller("ViewCtrl", function($location, $rootScope, $scope, DatabaseServi
         }).catch((error) => {
             console.log("error in favoriteContact", error);
         });
+    };
+
+    $scope.editContact = (contactId) => {
+        $location.path(`/contacts/edit/${contactId}`);
     };
 });
