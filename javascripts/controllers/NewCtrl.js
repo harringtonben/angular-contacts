@@ -15,7 +15,11 @@ app.controller("NewCtrl", function($http, $location, $rootScope, $scope, Databas
             "user_id": $rootScope.uid
         };
 
-        DatabaseService.addNewContact(newContact);
-        $location.path('/contacts/view');
+        DatabaseService.addNewContact(newContact).then(() => {
+            $location.path('/contacts/view');
+        }).catch((error) => {
+            console.log("error in addNewContact");
+        });
+        
    };
 });
