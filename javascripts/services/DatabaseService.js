@@ -1,6 +1,20 @@
 'use strict';
 
-app.service("DatabaseService", function($http, $q, FIREBASE_CONFIG) {
+app.service("DatabaseService", function($http, $rootScope, $q, FIREBASE_CONFIG) {
+
+    const createContactObject = (contact) => {
+
+       return { "first_name": contact.first_name,
+        "last_name": contact.last_name,
+        "phone_number": contact.phone_number,
+        "email": contact.email,
+        "twitter": contact.twitter,
+        "facebook_page": contact.facebook_page,
+        "instagram_username": contact.instagram_username,
+        "user_id": $rootScope.uid,
+        "is_favorite": true
+        };
+    };
 
     const getContacts = (userUid) => {
         let myContacts = [];
@@ -28,5 +42,9 @@ app.service("DatabaseService", function($http, $q, FIREBASE_CONFIG) {
         return $http.delete(`${FIREBASE_CONFIG.databaseURL}/contacts/${contactId}.json`);
     };
 
-    return {addNewContact, getContacts, deleteContact};
+    const updateContact = (contact, contactId) => {
+        return $http.put(`${FIREBASE_CONFIG.databaseURL}/contacts/${contactId}.json`, JSON.stringify(contact));
+    };
+
+    return {addNewContact, getContacts, deleteContact, createContactObject, updateContact};
 });

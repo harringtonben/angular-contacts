@@ -2,15 +2,14 @@
     <h1 class="text-center">View All Contacts</h1>
     <div id="contacts">
         <div ng-repeat="contact in contacts" class="col-sm-6 col-md-4 contact">
-            <div class="thumbnail">
-                <button class="btn btn-danger delete" ng-click="deleteContact(contact.id)"><i class="fa fa-trash-o"></i></button>
+            <div class="thumbnail">  
+                    <button class="btn btn-danger delete" ng-click="deleteContact(contact.id)"><i class="fa fa-trash-o"></i></button>
+                    <button class="btn btn-info star" ng-click="favoriteContact(contact)" ng-if="!contact.is_favorite"><i class="fa fa-star-o"></i></button> 
+                    <button class="btn btn-info star" ng-click="favoriteContact(contact)" ng-if="contact.is_favorite"><i class="fa fa-star"></i></button> 
+                    <button class="btn btn-info edit" ng-click="editContact(contact.id)"><i class="fa fa-pencil-square-o"></i></button>
+                    <button class="btn btn-info detail" ng-click="viewContact(contact.id)"><i class="fa  fa-window-restore"></i></button>   
                 <div class="caption">
                     <h3 >{{contact.first_name}} {{contact.last_name}}</h3>
-                    <p>{{contact.phone_number}}</p>
-                    <p>{{contact.email}}</p>
-                    <p>{{contact.facebook}}</p>
-                    <p >{{contact.twitter}}</p>
-                    <p>{{contact.instagram}}</p>
                 </div>
             </div>
         </div>
