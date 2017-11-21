@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller("ViewCtrl", function($rootScope, $scope, DatabaseService) {
+app.controller("ViewCtrl", function($location, $rootScope, $scope, DatabaseService) {
     $scope.contacts = [];
 
     const getContacts = () => {
@@ -19,5 +19,30 @@ app.controller("ViewCtrl", function($rootScope, $scope, DatabaseService) {
         }).catch((error) => {
             console.log("error in deleteContact", error);
         });
+    };
+
+    $scope.favoriteContact = (contact) => {
+        let updatedContact = {};
+
+        if (!contact.is_favorite) {
+            updatedContact = DatabaseService.createContactObject(contact);
+        }else {
+            updatedContact = DatabaseService.createContactObject(contact);
+            updatedContact.is_favorite = false;
+        }
+        
+        DatabaseService.updateContact(updatedContact, contact.id).then(() => {
+            getContacts();
+        }).catch((error) => {
+            console.log("error in favoriteContact", error);
+        });
+    };
+
+    $scope.editContact = (contactId) => {
+        $location.path(`/contacts/edit/${contactId}`);
+    };
+
+    $scope.contactDetail = (contactId) => {
+        $location.path(`/contacts/detail/${contactId}`);
     };
 });

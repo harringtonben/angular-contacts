@@ -1,0 +1,14 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">{{contact.first_name}} {{contact.last_name}}</h3>
+    </div>
+    <div class="panel-body">
+        <p>Phone Number: {{contact.phone_number}}</p>
+        <p>Email: {{contact.email}}</p>
+        <p><img class="sociallogo" src="images/twitter.jpg" alt="twitter"> {{contact.twitter}}</p>
+        <p><img class="sociallogo" src="images/facebook.png" alt="facebook"> {{contact.facebook_page}}</p>
+        <p><img class="sociallogo" src="images/instagram.png" alt="instagram"> {{contact.instagram_username}}</p>
+        <button class="btn btn-info" ng-click="favoriteContact(contact)" ng-if="!contact.is_favorite"><i class="fa fa-star-o"></i></button> 
+        <button class="btn btn-info" ng-click="favoriteContact(contact)" ng-if="contact.is_favorite"><i class="fa fa-star"></i></button> 
+    </div>
+</div>

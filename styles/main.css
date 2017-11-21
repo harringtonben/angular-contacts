@@ -24,6 +24,18 @@
     position: absolute;
     top: 5px;
     right: 5px; }
+  .contact .thumbnail .star {
+    position: absolute;
+    top: 5px;
+    right: 75px; }
+  .contact .thumbnail .edit {
+    position: absolute;
+    top: 5px;
+    left: 75px; }
+  .contact .thumbnail .detial {
+    position: absolute;
+    top: 5px;
+    left: 5px; }
 
 body {
   background-color: #C3C3C3; }
