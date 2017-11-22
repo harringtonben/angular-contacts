@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller("DetailCtrl", function($location, $routeParams, $scope, $window, ngToast, DatabaseService) {
+app.controller("DetailCtrl", function($location, $routeParams, $scope, ngToast, DatabaseService) {
     const getContact = () => {
         DatabaseService.getSingleContact($routeParams.id).then((results) => {
             $scope.contact = results.data;
@@ -35,7 +35,7 @@ app.controller("DetailCtrl", function($location, $routeParams, $scope, $window, 
             ngToast.danger({
                 content:'They must have been a jerk! Congrats on blocking them! If this was a mistake, please contact your system administartor',
                 dismissButton: true,
-                timeout: 1000
+                timeout: 3000
             });
             $location.path("/contacts/view");  
         }).catch((error) => {
