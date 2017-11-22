@@ -30,7 +30,6 @@ app.controller("DetailCtrl", function($location, $routeParams, $scope, $window, 
 
     $scope.blockContact = (contact) => {
         contact.is_blocked = true;
-        console.log(contact, $routeParams.id);
 
         DatabaseService.updateContact(contact, $routeParams.id).then((results) => {
             $window.alert('They must have been a jerk! Congrats on blocking them! If this was a mistake, please contact your system administartor');
