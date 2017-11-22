@@ -25,7 +25,9 @@ app.service("DatabaseService", function($http, $rootScope, $q, FIREBASE_CONFIG) 
                 if (contacts != null) {
                     Object.keys(contacts).forEach((key) => {
                         contacts[key].id = key;
-                        myContacts.push(contacts[key]);
+                        if (!contacts[key].is_blocked) {
+                            myContacts.push(contacts[key]);
+                        }
                     });    
                 }
                 resolve(myContacts); 
@@ -43,7 +45,7 @@ app.service("DatabaseService", function($http, $rootScope, $q, FIREBASE_CONFIG) 
                 if (contacts != null) {
                     Object.keys(contacts).forEach((key) => {
                         contacts[key].id = key;
-                        if (contacts[key].is_favorite) {
+                        if (contacts[key].is_favorite && !contacts[key].is_blocked) {
                             myContacts.push(contacts[key]);
                         }
                     });    

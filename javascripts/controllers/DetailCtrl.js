@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller("DetailCtrl", function($routeParams, $scope, DatabaseService) {
+app.controller("DetailCtrl", function($location, $routeParams, $scope, $window, DatabaseService) {
     const getContact = () => {
         DatabaseService.getSingleContact($routeParams.id).then((results) => {
             $scope.contact = results.data;
@@ -25,6 +25,18 @@ app.controller("DetailCtrl", function($routeParams, $scope, DatabaseService) {
             getContact();
         }).catch((error) => {
             console.log("error in favoriteContact", error);
+        });
+    };
+
+    $scope.blockContact = (contact) => {
+        contact.is_blocked = true;
+        console.log(contact, $routeParams.id);
+
+        DatabaseService.updateContact(contact, $routeParams.id).then((results) => {
+            $window.alert('They must have been a jerk! Congrats on blocking them! If this was a mistake, please contact your system administartor');
+            $location.path("/contacts/view");
+        }).catch((error) => {
+            console.log(error);
         });
     };
 });

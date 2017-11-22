@@ -10,5 +10,6 @@
         <p><img class="sociallogo" src="images/instagram.png" alt="instagram"> {{contact.instagram_username}}</p>
         <button class="btn btn-info" ng-click="favoriteContact(contact)" ng-if="!contact.is_favorite"><i class="fa fa-star-o"></i></button> 
         <button class="btn btn-info" ng-click="favoriteContact(contact)" ng-if="contact.is_favorite"><i class="fa fa-star"></i></button> 
+        <button class="btn btn-info detail" ng-click="blockContact(contact)"><i class="fa  fa-ban"></i></button>
     </div>
 </div>
