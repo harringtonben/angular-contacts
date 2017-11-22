@@ -1,7 +1,13 @@
 <div id="view-contacts">
     <h1 class="text-center">View All Contacts</h1>
     <div id="contacts">
-        <div ng-repeat="contact in contacts" class="col-sm-6 col-md-4 contact">
+            <div class="form-group">
+                    <div class="input-group col-xs-6 col-xs-offset-3 search">
+                        <span class="input-group-addon" ><span class="glyphicon glyphicon-search"></span></span>
+                        <input type="text" class="form-control" aria-describedby="start-date" id="searchBar" placeholder="Search..." ng-model="searchText">    
+                    </div>
+                </div>
+        <div ng-repeat="contact in contacts | filter: searchText" class="col-sm-6 col-md-4 contact">
             <div class="thumbnail">  
                     <button class="btn btn-danger delete" ng-click="deleteContact(contact.id)"><i class="fa fa-trash-o"></i></button>
                     <button class="btn btn-info star" ng-click="favoriteContact(contact)" ng-if="!contact.is_favorite"><i class="fa fa-star-o"></i></button> 
