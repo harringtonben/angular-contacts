@@ -37,5 +37,9 @@
     top: 5px;
     left: 5px; }
 
+.search {
+  margin-top: 15px;
+  margin-bottom: 15px; }
+
 body {
   background-color: #C3C3C3; }
